@@ -1,10 +1,10 @@
 # 头部菜单，title: link
 menu:
   首页: /
-  分类: /categories
-  标签: /tags
-  归档: /archives  
-  关于: /about
+  # 分类: /categories/
+  # 标签: /tags/
+  # 归档: /archives/
+  # 关于: /about/
 
 # 是否显示目录
 TOC: false
@@ -13,7 +13,7 @@ TOC: false
 autoplay: false
 
 # 默认音乐（随机播放）
-mp3: 
+mp3:
     - http://link.hhtjim.com/163/425570952.mp3
     - http://link.hhtjim.com/163/425570952.mp3
 
@@ -21,7 +21,7 @@ mp3:
 welcome_cover: /img/welcome-cover.jpg
 
 # 默认文章封面图（随机调用,支持外链）
-cover: 
+cover:
   - /img/cover.jpg
   - /img/welcome-cover.jpg
 
@@ -46,16 +46,16 @@ local_search:
 # 是否显示 一言(hitokoto)
 hitokoto: true
 
-# 链接(可选:facebook,twitter,github,wechat,email)
+# 链接(可选:facebook,twitter,github,wechat,email，有历史遗留bug，首个图标会变成方框)
 links:
-    facebook: /
-    twitter: /
-    github: /
-    wechat: /img/logo.png
-    email: mailto:xxxx@gmail.com
-  
+    # facebook: /
+    # twitter: /
+    # github: /
+    # wechat: /img/logo.png
+    # email: mailto:xxxx@gmail.com
+
 # 备案
-beian: 
+beian:
     # 是否显示备案信息
     enable: true
     # 是否在主页面最底下显示备案信息(虽然丑，但是完全满足规定要求)
@@ -65,32 +65,35 @@ beian:
     # 链接地址
     link: http://www.beian.miit.gov.cn
 
-# Gitalk 评论插件（https://github.com/gitalk/gitalk）
+# 评论插件 Twikoo/Gitalk
+# 留空则关闭评论系统
+comments:
+  use:
+  autoexpand: true
+
+# Gitalk
+# https://github.com/gitalk/gitalk
 gitalk:
-    # 是否启用评论功能
-    enable: false
-    # 是否自动展开评论框
-    autoExpand: false
-    # 应用编号
-    clientID: ''
-    # 应用秘钥
-    clientSecret: ''
-    # issue仓库名
-    repo: ''
-    # Github名
-    owner: ''
-    # Github名
-    admin: ['']
-    # Ensure uniqueness and length less than 50
-    id: location.pathname
-    # Facebook-like distraction free mode
-    distractionFreeMode: false
+  client_id:
+  client_secret:
+  repo:
+  owner:
+  admin:
+  option:
+  distractionfreemode:
+
+# Twikoo
+# https://github.com/imaegoo/twikoo
+twikoo:
+  envId:
+  region:
+  visitor: true
 
 # 网站关键字
 keywords: Fechin
 
 # 要使用google_analytics进行统计的话，这里需要配置ID
-google_analytics: 
+google_analytics:
 
 # 网站ico
 favicon: /img/favicon.png

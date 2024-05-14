@@ -1,0 +1,23 @@
+<div id="comments-container">
+    <% if (theme.comments && theme.comments.use){ %>
+        <% if (theme.comments.use === 'Gitalk' && theme.gitalk){ %>
+            <div id="gitalk-container" class="comment link"
+                data-ae="<%=theme.comments.autoexpand%>"
+                data-ci="<%=theme.gitalk.client_id%>"
+                data-cs="<%=theme.gitalk.client_secret%>"
+                data-r="<%=theme.gitalk.repo%>"
+                data-o="<%=theme.gitalk.owner%>"
+                data-a="<%= JSON.stringify(theme.gitalk.admin)%>"
+                data-d="<%=theme.gitalk.distractionfreemode%>"
+            >查看评论</div>
+        <% } %>
+        <% if (theme.comments.use === 'Twikoo' && theme.twikoo){ %>
+            <div id="tcomment" class="comment link"
+                data-ae="<%=theme.comments.autoexpand%>"
+                data-e="<%=theme.twikoo.envId%>"
+                data-r="<%=theme.twikoo.region%>"
+                data-v="<%=theme.twikoo.visitor%>"
+            >查看评论</div>
+        <% } %>
+    <% } %>
+</div>
