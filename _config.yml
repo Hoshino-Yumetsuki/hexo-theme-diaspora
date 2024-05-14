@@ -1,10 +1,10 @@
 # 头部菜单，title: link
 menu:
   首页: /
-  # 分类: /categories/
-  # 标签: /tags/
-  # 归档: /archives/
-  # 关于: /about/
+  分类: /categories/
+  标签: /tags/
+  归档: /archives/
+  关于: /about/
 
 # 是否显示目录
 TOC: false
@@ -105,3 +105,5 @@ rss: atom.xml
 copyright:
     enable: false
     license: "CC BY-NC-ND"
+
+live2d_widget: false

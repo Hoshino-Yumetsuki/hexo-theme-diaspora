@@ -41,6 +41,8 @@ var description = '';
     <script src="https://registry.npmmirror.com/@fortawesome/fontawesome-free/latest/files/js/all.min.js"></script>
     <link rel="stylesheet" href="https://registry.npmmirror.com/@fortawesome/fontawesome-free/latest/files/css/all.min.css">
 
+    <% if(theme.live2d_widget){ %><script src="live2d-widget/autoload.js"></script><% } %>
+
     <% if(theme.twitterpic.enable){ %><meta name="twitter:image:src" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
     <% if(theme.twitterpic.enable){ %><meta name="twitter:creator" content="@<%=theme.twitterpic.creatorid%>"/><%}%>
     <% if(theme.twitterpic.enable){ %><meta name="twitter:card" content="summary_large_image"/><%} else {%><meta name="twitter:card" content="summary"/><%}%>
