@@ -64,4 +64,12 @@ var description = '';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    <% if (theme.inject && theme.inject.head) { %>
+        <!--diaspora inject start-->
+            <% for (var i = 0; i < theme.inject.head.length; i++) { %>
+                <%- theme.inject.head[i] %>
+            <% } %>
+        <!--diaspora inject end-->
+    <% } %>
 </head>

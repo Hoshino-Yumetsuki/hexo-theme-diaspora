@@ -7,4 +7,13 @@
 <%- partial('_partial/photoswipe', null, {cache: true}) %>
 <%- partial('_partial/mathjax', null, {cache: true}) %>
 <%- partial("_partial/google-analytics", {cache: true}) %>
+
+<% if (theme.inject && theme.inject.body) { %>
+    <!--diaspora inject start-->
+      <% for (var i = 0; i < theme.inject.body.length; i++) { %>
+          <%- theme.inject.body[i] %>
+      <% } %>
+    <!--diaspora inject end-->
+<% } %>
+
 </html>
