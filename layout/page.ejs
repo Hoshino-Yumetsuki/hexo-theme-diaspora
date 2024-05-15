@@ -13,7 +13,7 @@
                 <% } else if (page.type === 'categories') { %>
                     <%- partial('_partial/categories') %>
                 <% } else { %>
-                        <%- page.content %>
+                    <%- markdown_enhanced(page.content) %>
                 <% } %>
                 </div>
             </div>

@@ -6,7 +6,7 @@
             <%- partial('_partial/post/tag', {post: page}) %>
         </div>
         <div class="content markdown">
-            <%- page.content %>
+            <%- markdown_enhanced(page.content) %>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="<%- theme.autoplay || page.autoplay || "false" %>">
                 <source type="audio/mpeg" src="<%- page.mp3 %>">
