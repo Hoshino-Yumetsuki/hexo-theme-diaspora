@@ -34,6 +34,8 @@ var description = '';
     <% if (theme.favicon){ %><link rel="icon" href="<%- url_for(theme.favicon) %>"> <% } %>
     <% if (config.author){ %><meta name="author" content="<%= config.author %>"> <% } %>
 
+    <%- js(['js/jquery.min.js', 'js/parallax.min.js', 'js/typed.js', 'js/diaspora.js'])%>
+
     <link rel="stylesheet" href="https://registry.npmmirror.com/gitalk/latest/files/dist/gitalk.css">
     <script src="https://registry.npmmirror.com/gitalk/latest/files/dist/gitalk.min.js"></script>
     <script src="https://registry.npmmirror.com/twikoo/latest/files/dist/twikoo.all.min.js"></script>
