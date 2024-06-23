@@ -36,14 +36,14 @@ var description = '';
 
     <%- js(['js/jquery.min.js', 'js/parallax.min.js', 'js/typed.js', 'js/diaspora.js'])%>
 
-    <link rel="stylesheet" href="https://registry.npmmirror.com/gitalk/latest/files/dist/gitalk.css">
-    <script src="https://registry.npmmirror.com/gitalk/latest/files/dist/gitalk.min.js"></script>
-    <script src="https://registry.npmmirror.com/twikoo/latest/files/dist/twikoo.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.cbd.int/gitalk/dist/gitalk.css">
+    <script src="https://cdn.cbd.int/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.cbd.int/twikoo/dist/twikoo.min.js"></script>
 
-    <script src="https://registry.npmmirror.com/@fortawesome/fontawesome-free/latest/files/js/all.min.js"></script>
-    <link rel="stylesheet" href="https://registry.npmmirror.com/@fortawesome/fontawesome-free/latest/files/css/all.min.css">
+    <script src="https://cdn.cbd.int/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free/css/all.min.css">
 
-    <% if(theme.live2d_widget){ %><script src="live2d-widget/autoload.js"></script><% } %>
+    <% if(theme.live2d_widget){ %><%- js(['live2d-widget/autoload.js'])%><% } %>
 
     <% if(theme.twitterpic.enable){ %><meta name="twitter:image:src" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
     <% if(theme.twitterpic.enable){ %><meta name="twitter:creator" content="@<%=theme.twitterpic.creatorid%>"/><%}%>
