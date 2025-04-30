@@ -34,7 +34,7 @@ var description = '';
     <% if (theme.favicon){ %><link rel="icon" href="<%- url_for(theme.favicon) %>"> <% } %>
     <% if (config.author){ %><meta name="author" content="<%= config.author %>"> <% } %>
 
-    <%- js(['js/jquery.min.js', 'js/parallax.min.js', 'js/typed.js', 'js/diaspora.js'])%>
+    <%- js(['https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js', 'https://fastly.jsdelivr.net/npm/jquery-migrate/dist/jquery-migrate.min.js', 'https://fastly.jsdelivr.net/npm/parallax-js/dist/parallax.min.js', 'https://fastly.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js', 'js/diaspora.js'])%>
 
     <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/gitalk/dist/gitalk.css">
     <script src="https://fastly.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
