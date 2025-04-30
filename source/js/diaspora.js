@@ -598,6 +598,7 @@ $(function () {
         setTimeout(function () {
           Diaspora.HS($(e.target), "push");
           $(".toc").fadeIn(1000);
+          initComments();
         }, 300);
         return false;
       // photoswipe
@@ -677,14 +678,20 @@ $(function () {
     }
   });
   // 是否自动展开评论
-  comment = $("#gitalk-container");
-  if (comment.data("ae") == true) {
-    comment.click();
+  function initComments() {
+    var gitalkContainer = $("#gitalk-container");
+    if (gitalkContainer.length && gitalkContainer.data("ae") == true) {
+      gitalkContainer.click();
+    }
+
+    var twikooContainer = $("#tcomment");
+    if (twikooContainer.length && twikooContainer.data("ae") == true) {
+      twikooContainer.click();
+    }
   }
-  comment = $("#tcomment");
-  if (comment.data("ae") == true) {
-    comment.click();
-  }
+
+  // Initialize comments on page load
+  initComments();
 
   console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/Fechin/hexo-theme-diaspora");
 });
