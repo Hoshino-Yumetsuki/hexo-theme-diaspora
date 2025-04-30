@@ -1,6 +1,6 @@
 <% var first = page.posts.sort("date", "desc").eq(0); %>
 <div id="screen">
-    <div id="mark">
+    <div id="mark" data-relative-input="true" data-hover-only="true">
         <div class="layer" data-depth="0.4">
             <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous", height: "100vh"}) %>
         </div>

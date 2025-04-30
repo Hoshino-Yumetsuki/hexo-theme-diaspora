@@ -274,17 +274,25 @@ $(function () {
       setTimeout(function () {
         $("html, body").removeClass("loading");
       }, 1000);
-      $("#mark").parallax();
-      var vibrant = new Vibrant(cover.t[0]);
-      var swatches = vibrant.swatches();
-      if (swatches["DarkVibrant"]) {
-        $("#vibrant polygon").css("fill", swatches["DarkVibrant"].getHex());
-        $("#vibrant div").css("background-color", swatches["DarkVibrant"].getHex());
-      }
-      if (swatches["Vibrant"]) {
-        $(".icon-menu").css("color", swatches["Vibrant"].getHex());
-        $(".icon-search").css("color", swatches["Vibrant"].getHex());
-      }
+      // Initialize parallax using the new API
+      var scene = document.getElementById('mark');
+      new Parallax(scene, {
+        relativeInput: true,
+        hoverOnly: true,
+        calibrateX: false,
+        calibrateY: true
+      });
+      // 使用新版 Vibrant.js API
+      Vibrant.from(cover.t[0]).getPalette().then(function(palette) {
+        if (palette.DarkVibrant) {
+          $("#vibrant polygon").css("fill", palette.DarkVibrant.hex);
+          $("#vibrant div").css("background-color", palette.DarkVibrant.hex);
+        }
+        if (palette.Vibrant) {
+          $(".icon-menu").css("color", palette.Vibrant.hex);
+          $(".icon-search").css("color", palette.Vibrant.hex);
+        }
+      });
     });
     if (!cover.t.attr("src")) {
       alert("Please set the post thumbnail");
