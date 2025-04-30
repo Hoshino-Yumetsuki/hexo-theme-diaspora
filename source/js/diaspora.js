@@ -274,15 +274,19 @@ $(function () {
       setTimeout(function () {
         $("html, body").removeClass("loading");
       }, 1000);
-      // Initialize parallax using the new API
       var scene = document.getElementById('mark');
       new Parallax(scene, {
         relativeInput: true,
         hoverOnly: true,
         calibrateX: false,
-        calibrateY: true
+        calibrateY: true,
+        limitX: 30,          // 水平方向的移动范围
+        limitY: 30,          // 垂直方向的移动范围
+        scalarX: 5,          // 移动幅度
+        scalarY: 5,          // 移动幅度
+        frictionX: 0.1,      // 水平方向的阻力
+        frictionY: 0.1       // 垂直方向的阻力
       });
-      // 使用新版 Vibrant.js API
       Vibrant.from(cover.t[0]).getPalette().then(function(palette) {
         if (palette.DarkVibrant) {
           $("#vibrant polygon").css("fill", palette.DarkVibrant.hex);
@@ -348,12 +352,11 @@ $(function () {
 
   //搜搜
   var searchFunc = function (path, search_id, content_id) {
-    "use strict"; //使用严格模式
+    "use strict";
     $.ajax({
       url: path,
       dataType: "xml",
       success: function (xmlResponse) {
-        // 从xml中获取相应的标题等数据
         var datas = $("entry", xmlResponse)
           .map(function () {
             return {
@@ -363,7 +366,6 @@ $(function () {
             };
           })
           .get();
-        //ID选择器
         var $input = document.getElementById(search_id);
         var $resultContent = document.getElementById(content_id);
         $input.addEventListener("input", function () {
@@ -376,7 +378,6 @@ $(function () {
           if (this.value.trim().length <= 0) {
             return;
           }
-          // 本地搜索主要部分
           datas.forEach(function (data) {
             var isMatch = true;
             var content_index = [];
@@ -406,13 +407,10 @@ $(function () {
                 }
               });
             }
-            // 返回搜索结果
             if (isMatch) {
-              //结果标签
               str += "<li><a href='" + data_url + "' class='search-result-title' target='_blank'>" + data_title + "</a>";
               var content = data.content.trim().replace(/<[^>]+>/g, "");
               if (first_occur >= 0) {
-                // 拿出含有搜索字的部分
                 var start = first_occur - 6;
                 var end = first_occur + 6;
                 if (start < 0) {
@@ -425,7 +423,6 @@ $(function () {
                   end = content.length;
                 }
                 var match_content = content.substr(start, end);
-                // 列出搜索关键字，定义class加高亮
                 keywords.forEach(function (keyword) {
                   var regS = new RegExp(keyword, "gi");
                   match_content = match_content.replace(regS, '<em class="search-keyword">' + keyword + "</em>");
