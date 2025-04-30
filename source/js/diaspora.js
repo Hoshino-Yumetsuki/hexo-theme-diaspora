@@ -477,7 +477,6 @@ $(function () {
           }
         }
         return false;
-        break;
       //search
       case tag.indexOf("switchsearch") != -1:
         $("body").removeClass("mu");
@@ -491,7 +490,6 @@ $(function () {
           searchFunc(path, "local-search-input", "local-search-result");
         }, 300);
         return false;
-        break;
       // next page
       case tag.indexOf("more") != -1:
         tag = $(".more");
@@ -528,7 +526,6 @@ $(function () {
           }
         );
         return false;
-        break;
       // home
       case tag.indexOf("icon-home") != -1:
         $(".toc").fadeOut(100);
@@ -538,7 +535,6 @@ $(function () {
           location.href = $(".icon-home").data("url");
         }
         return false;
-        break;
       // qrcode
       case tag.indexOf("icon-scan") != -1:
         if ($(".icon-scan").hasClass("tg")) {
@@ -548,29 +544,24 @@ $(function () {
           $("#qr").qrcode({ width: 128, height: 128, text: location.href }).toggle();
         }
         return false;
-        break;
       // audio play
       case tag.indexOf("icon-play") != -1:
         $("#audio")[0].play();
         $(".icon-play").removeClass("icon-play").addClass("icon-pause");
         return false;
-        break;
       // audio pause
       case tag.indexOf("icon-pause") != -1:
         $("#audio")[0].pause();
         $(".icon-pause").removeClass("icon-pause").addClass("icon-play");
         return false;
-        break;
       // history state
       case tag.indexOf("cover") != -1:
         Diaspora.HS($(e.target).parent(), "push");
         return false;
-        break;
       // history state
       case tag.indexOf("posttitle") != -1:
         Diaspora.HS($(e.target), "push");
         return false;
-        break;
       // prev, next post
       case rel == "prev" || rel == "next":
         if (rel == "prev") {
@@ -581,7 +572,6 @@ $(function () {
         $(e.target).attr("title", t);
         Diaspora.HS($(e.target), "replace");
         return false;
-        break;
       // toc
       case tag.indexOf("toc-text") != -1 || tag.indexOf("toc-link") != -1 || tag.indexOf("toc-number") != -1:
         hash = "";
@@ -598,7 +588,6 @@ $(function () {
           300
         );
         return false;
-        break;
       // quick view
       case tag.indexOf("pviewa") != -1:
         $("body").removeClass("mu");
@@ -611,7 +600,6 @@ $(function () {
           $(".toc").fadeIn(1000);
         }, 300);
         return false;
-        break;
       // photoswipe
       case tag.indexOf("pimg") != -1:
         var pswpElement = $(".pswp").get(0);
@@ -651,7 +639,6 @@ $(function () {
           lightBox.init();
         }
         return false;
-        break;
       // comment
       // comment
       case -1 != tag.indexOf("comment"):
@@ -685,10 +672,8 @@ $(function () {
           commentContainer.html("评论已关闭");
         }
         return false;
-        break;
       default:
         return true;
-        break;
     }
   });
   // 是否自动展开评论
