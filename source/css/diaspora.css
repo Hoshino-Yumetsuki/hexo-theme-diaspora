@@ -48,6 +48,7 @@ body:before {
   -moz-border-radius: 50%;
   -webkit-animation: loading 2s ease-out forwards infinite;
   -moz-animation: loading 2s ease-out forwards infinite;
+  animation: loading 2s ease-out forwards infinite;
   display: none;
 }
 
@@ -80,6 +81,20 @@ body.loading:before {
 
   100% {
     -moz-transform: scale(0.3);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(0.3);
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(0.3);
   }
 }
 
@@ -732,8 +747,9 @@ body.mu .icon-logo {
   font-size: 23px;
 }
 
+/*
 .set .search .search-result {}
-
+*/
 .set .search .search-keyword {
   background: yellow;
   padding: 2px auto 2px;
@@ -1172,14 +1188,6 @@ h1.title {
 /*.icon-wechat:before{content:"\e603"}*/
 .icon-left:before {
   content: "\e604"
-}
-
-@font-face {
-  font-family: "iconfont";
-  /* Project id 2609542 */
-  src: url('//at.alicdn.com/t/font_2609542_9phvm77zuvw.woff2?t=1623581069201') format('woff2'),
-    url('//at.alicdn.com/t/font_2609542_9phvm77zuvw.woff?t=1623581069201') format('woff'),
-    url('//at.alicdn.com/t/font_2609542_9phvm77zuvw.ttf?t=1623581069201') format('truetype');
 }
 
 .iconfont {
