@@ -34,9 +34,8 @@ twitterpic:
 # 是否使用mathjax
 mathjax: false
 
-
 # 是否关闭默认滚动条
-scrollbar: true
+off_scrollbar: true
 
 # 本地搜索,请将索引文件放在网站根目录,或修改主题js文件的path值
 local_search:

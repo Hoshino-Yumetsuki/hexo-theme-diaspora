@@ -23,13 +23,9 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   background: #fff;
-}
-
-body {
   font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 14px;
   position: relative;
-  overflow-x: hidden;
 }
 
 body:before {
@@ -490,21 +486,6 @@ body.touch #top {
   -webkit-transition: width .5s ease;
   -moz-transition: width .5s ease;
   transition: width .5s ease;
-}
-
-.scrollbar {
-  position: absolute;
-  height: 2px;
-  width: 10px;
-  top: 0;
-  background-color: #50bcb6;
-  -webkit-transition: width .5s ease;
-  -moz-transition: width .5s ease;
-  transition: width .5s ease;
-}
-
-body.touch .scrollbar {
-  display: none;
 }
 
 .nav {
