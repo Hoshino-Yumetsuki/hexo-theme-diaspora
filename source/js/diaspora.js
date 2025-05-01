@@ -174,38 +174,43 @@ var Diaspora = {
     });
   },
   loading: function () {
-    var w = window.innerWidth;
-    var css =
-      '<style class="loaderstyle" id="loaderstyle' +
-      w +
-      '">' +
-      "@-moz-keyframes loader" +
-      w +
-      "{100%{background-position:" +
-      w +
-      "px 0}}" +
-      "@-webkit-keyframes loader" +
-      w +
-      "{100%{background-position:" +
-      w +
-      "px 0}}" +
-      ".loader" +
-      w +
-      "{-webkit-animation:loader" +
-      w +
-      " 3s linear infinite;-moz-animation:loader" +
-      w +
-      " 3s linear infinite;}" +
-      "</style>";
-    $(".loaderstyle").remove();
-    $("head").append(css);
-    $("#loader")
-      .removeClass()
-      .addClass("loader" + w)
-      .show();
+    // 检查是否启用了加载条
+    if ($("body").hasClass("loading")) {
+      var w = window.innerWidth;
+      var css =
+        '<style class="loaderstyle" id="loaderstyle' +
+        w +
+        '">' +
+        "@-moz-keyframes loader" +
+        w +
+        "{100%{background-position:" +
+        w +
+        "px 0}}" +
+        "@-webkit-keyframes loader" +
+        w +
+        "{100%{background-position:" +
+        w +
+        "px 0}}" +
+        ".loader" +
+        w +
+        "{-webkit-animation:loader" +
+        w +
+        " 3s linear infinite;-moz-animation:loader" +
+        w +
+        " 3s linear infinite;}" +
+        "</style>";
+      $(".loaderstyle").remove();
+      $("head").append(css);
+      $("#loader")
+        .removeClass()
+        .addClass("loader" + w)
+        .show();
+    }
   },
   loaded: function () {
-    $("#loader").removeClass().hide();
+    if ($("body").hasClass("loading")) {
+      $("#loader").removeClass().hide();
+    }
   },
   F: function (id, w, h) {
     var _height = $(id).parent().height(),
