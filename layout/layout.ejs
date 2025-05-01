@@ -1,7 +1,6 @@
 <%- partial('_partial/head') %>
-<body class="<% if(theme.loading_bar){ %>loading<% } %>">
+<body>
     <span id="config-title" style="display:none"><%= config.title %></span>
-    <% if(theme.loading_bar){ %><div id="loader"></div><% } %>
     <%- body %>
 </body>
 <%- partial('_partial/photoswipe', null, {cache: true}) %>

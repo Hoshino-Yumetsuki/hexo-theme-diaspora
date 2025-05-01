@@ -46,9 +46,6 @@ local_search:
 # 是否显示 一言(hitokoto)
 hitokoto: true
 
-# 是否显示加载条
-loading_bar: false
-
 # 链接(可选:facebook,twitter,github,wechat,email，有历史遗留bug，首个图标会变成方框)
 links:
     # facebook: /
