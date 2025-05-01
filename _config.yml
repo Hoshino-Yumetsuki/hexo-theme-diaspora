@@ -46,13 +46,13 @@ local_search:
 # 是否显示 一言(hitokoto)
 hitokoto: true
 
-# 链接(可选:facebook,twitter,github,wechat,email，有历史遗留bug，首个图标会变成方框)
+# 链接
 links:
-    # facebook: /
-    # twitter: /
-    # github: /
-    # wechat: /img/logo.png
-    # email: mailto:xxxx@gmail.com
+    # github: https://github.com
+    # twitter: https://twitter.com
+    # facebook: https://facebook.com
+    # wechat: /img/wechat.png || fa-brands fa-weixin
+    # email: mailto:example@example.com || fa-solid fa-envelope
 
 # 备案
 beian:

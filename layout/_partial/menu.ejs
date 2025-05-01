@@ -14,11 +14,20 @@
 	</center>
 
 	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
+		<a href="#" class="spacer"></a>
 		<% for (var i in theme.links){ %>
-            <%- link_to(theme.links[i],' ',{external: true ,class: 'iconfont icon-'+i,title:i})%>
+            <% if (theme.links[i]) { %>
+                <%
+                var linkConfig = theme.links[i].split(' || ');
+                var linkUrl = linkConfig[0];
+                var iconClass = linkConfig.length > 1 ? linkConfig[1] : 'fa-brands fa-' + i;
+                %>
+                <a href="<%- url_for(linkUrl) %>" title="<%- i %>" target="_blank" rel="noopener">
+                    <i class="<%- iconClass %>"></i>
+                </a>
+            <% } %>
         <%}%>
-		<a href="#" class="iconfont icon-null"></a>
+		<a href="#" class="spacer"></a>
 	</p>
 
     <p id="copyright">
