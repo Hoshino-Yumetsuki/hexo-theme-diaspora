@@ -2,8 +2,12 @@
     <a href="<%- url_for(post.path) %>" title="<%- post.title || "Untitled" %>">
         <% var date = new Date(); %>
         <% var seed = date.getTime(); %>
-        <% var randomIndex = Math.abs(Math.cos(seed)) * theme.cover.length; %>
-        <%- image_tag(post.cover || theme.cover[Math.floor(randomIndex)], {class: "cover", width: 680, height: 440}) %>
+        <%
+        var defaultCover = "/img/cover.jpg";
+        var covers = Array.isArray(theme.cover) && theme.cover.length > 0 ? theme.cover : [defaultCover];
+        var randomIndex = Math.abs(Math.cos(seed)) * covers.length;
+        %>
+        <%- image_tag(post.cover || covers[Math.floor(randomIndex)], {class: "cover", width: 680, height: 440}) %>
     </a>
     <div class="else">
         <p><%- post.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
