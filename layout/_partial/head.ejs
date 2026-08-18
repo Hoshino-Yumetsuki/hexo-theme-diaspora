@@ -43,8 +43,6 @@ var description = '';
     <script src="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js"></script>
     <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 
-    <% if(theme.live2d_widget){ %><%- js(['live2d-widget/autoload.js'])%><% } %>
-
     <% if(theme.twitterpic.enable){ %><meta name="twitter:image:src" content="<%- url_for(theme.twitterpic.src) %>"/><%}%>
     <% if(theme.twitterpic.enable){ %><meta name="twitter:creator" content="@<%=theme.twitterpic.creatorid%>"/><%}%>
     <% if(theme.twitterpic.enable){ %><meta name="twitter:card" content="summary_large_image"/><%} else {%><meta name="twitter:card" content="summary"/><%}%>

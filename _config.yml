@@ -105,8 +105,6 @@ copyright:
     enable: false
     license: "CC BY-NC-ND"
 
-live2d_widget: false
-
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
