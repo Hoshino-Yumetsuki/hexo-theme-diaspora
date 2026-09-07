@@ -61,7 +61,7 @@ const Diaspora = {
   },
 
   isTouch() {
-    return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    return window.matchMedia("(pointer: coarse)").matches;
   },
 
   parseHTML(html) {
